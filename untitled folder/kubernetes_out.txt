@@ -1,0 +1,23 @@
+#running run kubernetes script
+(devops) MACs-MacBook-Pro:ml-microservice-kubernetes mac$ ./run_kubernetes.sh 
+pod/udacity4 created
+NAME       READY   STATUS              RESTARTS   AGE
+udacity   0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+(devops) MACs-MacBook-Pro:ml-microservice-kubernetes mac$ ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "udacity" already exists
+NAME       READY   STATUS    RESTARTS   AGE
+udacity   1/1     Running   0          7s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+
+#runming make prediction script
+(devops) MACs-MacBook-Pro:ml-microservice-kubernetes mac$ ./make_prediction.sh         
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
